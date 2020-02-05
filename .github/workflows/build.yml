@@ -1,0 +1,22 @@
+name: Deploy site
+on: [push]
+
+jobs:
+  build:
+    name: Build generator and site
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: cachix/install-nix-action@v6
+    - uses: cachix/cachix-action@v3
+      with:
+        name: meckweb
+        signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
+        # Only needed for private caches
+        authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+        file: 'site.nix'
+    - name: Save Result
+      uses: actions/upload-artifact@v1
+      with:
+        name: site
+        path: result

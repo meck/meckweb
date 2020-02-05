@@ -4,6 +4,9 @@ module Main (main) where
 
 import           Config
 import           Hakyll
+import           System.Environment
+import           Control.Monad.IO.Class         ( liftIO )
+
 
 main :: IO ()
 main = hakyll $ do
@@ -27,18 +30,21 @@ main = hakyll $ do
 
     match "index.md" $ do
         route $ setExtension "html"
-        compile $
-            pandocCompiler >>= loadAndApplyTemplate "templates/index.html" defaultCtx >>= relativizeUrls
+        compile
+            $   pandocCompiler
+            >>= loadAndApplyTemplate "templates/index.html" defaultCtx
+            >>= relativizeUrls
 
     match "pgp.md" $ do
         route $ setExtension "html"
-        compile $
-            pandocCompiler
-                >>= loadAndApplyTemplate "templates/pgp.html" defaultCtx
-                >>= relativizeUrls
+        compile
+            $   pandocCompiler
+            >>= loadAndApplyTemplate "templates/pgp.html" defaultCtx
+            >>= relativizeUrls
 
 
     match "templates/*" $ compile templateBodyCompiler
 
 defaultCtx :: Context String
 defaultCtx = linksCtx <> siteNameCtx <> defaultContext
+
