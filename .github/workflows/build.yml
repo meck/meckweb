@@ -71,4 +71,3 @@ jobs:
           webhook_url: ${{ secrets.WEBHOOK_URL }}
           webhook_secret: ${{ secrets.WEBHOOK_SECRET }}
           data: '{ "link": "${{steps.upload-release-asset.outputs.browser_download_url}}" }'
-          # data: '{ "link": "https://github.com/octocat/Hello-World/releases/download/v1.0.0/example.zip" }' 
