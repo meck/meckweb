@@ -5,15 +5,20 @@ links:
     linkIcon: "envelope"
     linkIconSet: "fas"
 
+  - linkTitle: "Public PGP Key"
+    linkUrl: "/pgp.html"
+    linkIcon: "key"
+    linkIconSet: "fas"
+
   - linkTitle: "github"
     linkUrl: "https://github.com/meck"
     linkIcon: "github"
     linkIconSet: "fab"
 
-  - linkTitle: "Public PGP Key"
-    linkUrl: "/pgp.html"
-    linkIcon: "key"
-    linkIconSet: "fas"
+  - linkTitle: "Keybase"
+    linkUrl: "https://keybase.io/meck"
+    linkIcon: "keybase"
+    linkIconSet: "fab"
 ---
 
 #### Meck Ljudteknik is a audio engineering and software company run by Johan “meck” Eklund.
