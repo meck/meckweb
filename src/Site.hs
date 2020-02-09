@@ -42,6 +42,9 @@ main = hakyll $ do
             >>= loadAndApplyTemplate "templates/pgp.html" defaultCtx
             >>= relativizeUrls
 
+    match "keybase.txt" $ do
+        route idRoute
+        compile copyFileCompiler
 
     match "templates/*" $ compile templateBodyCompiler
 
