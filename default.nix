@@ -12,11 +12,11 @@ let
 
   # The css renderer (Clay) needs ghc 
   # Run the Clay directly in nix, bypassing cabal
-  ghcClay = haskellPackages.ghcWithPackages (p : with p; [ clay text]) ;
+  ghcClay = haskellPackages.ghcWithPackages (p: with p; [ clay text ]);
   generator = pkgs.haskell.lib.overrideCabal drv (old: {
     postConfigure = ''
       substituteInPlace src/Site.hs --replace '"cabal" ["v2-exec", "runghc"]' '"${ghcClay}/bin/runghc" []'
     '';
   });
 
-in if pkgs.lib.inNixShell then generator.env else generator
+in generator

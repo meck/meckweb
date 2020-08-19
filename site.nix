@@ -1,6 +1,8 @@
-{ nixpkgs ? import <nixpkgs> { }, compiler ? "ghc865" }:
+{ compiler ? "default" }:
 
 let
+  nixpkgs = import ./nixpkgs.nix;
+
   inherit (nixpkgs) pkgs;
 
   haskellPackages = if compiler == "default" then
@@ -16,7 +18,8 @@ let
 in nixpkgs.stdenv.mkDerivation {
   name = "meck-website";
 
-  ${if !nixpkgs.stdenv.isDarwin then "LOCALE_ARCHIVE" else null} = "${nixpkgs.glibcLocales}/lib/locale/locale-archive";
+  ${if !nixpkgs.stdenv.isDarwin then "LOCALE_ARCHIVE" else null} =
+    "${nixpkgs.glibcLocales}/lib/locale/locale-archive";
   ${if !nixpkgs.stdenv.isDarwin then "LC_ALL" else null} = "en_US.UTF-8";
 
   preConfigure = ''export LANG="en_US.UTF-8";'';

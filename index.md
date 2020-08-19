@@ -14,11 +14,6 @@ links:
     linkUrl: "https://github.com/meck"
     linkIcon: "github"
     linkIconSet: "fab"
-
-  - linkTitle: "Keybase"
-    linkUrl: "https://keybase.io/meck"
-    linkIcon: "keybase"
-    linkIconSet: "fab"
 ---
 
 #### Meck Ljudteknik is a audio engineering and software company run by Johan “meck” Eklund.
