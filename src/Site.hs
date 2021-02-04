@@ -42,11 +42,12 @@ main = hakyll $ do
             >>= loadAndApplyTemplate "templates/pgp.html" defaultCtx
             >>= relativizeUrls
 
+    -- Custom home page
     match "start.md" $ do
         route $ setExtension "html"
         compile
             $   pandocCompiler
-            >>= loadAndApplyTemplate "templates/index.html" defaultCtx
+            >>= loadAndApplyTemplate "templates/start.html" defaultCtx
             >>= relativizeUrls
 
     match "templates/*" $ compile templateBodyCompiler
