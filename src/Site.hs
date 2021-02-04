@@ -42,6 +42,13 @@ main = hakyll $ do
             >>= loadAndApplyTemplate "templates/pgp.html" defaultCtx
             >>= relativizeUrls
 
+    match "start.md" $ do
+        route $ setExtension "html"
+        compile
+            $   pandocCompiler
+            >>= loadAndApplyTemplate "templates/index.html" defaultCtx
+            >>= relativizeUrls
+
     match "templates/*" $ compile templateBodyCompiler
 
 defaultCtx :: Context String
