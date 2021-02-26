@@ -67,6 +67,7 @@ baseCss = do
         transition "color" (sec 0.2) easeOut (sec 0)
         color fgColor
         hover & color hoColor
+        textDecoration none
 
     h1 ? fontSize (rem 9)
 
