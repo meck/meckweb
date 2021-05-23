@@ -4,3 +4,4 @@ cradle:
       component: "meckweb:exe:site"
     - path: "./css/default.hs"
       component: "meckweb:exe:css"
+
