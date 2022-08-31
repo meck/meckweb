@@ -1,26 +1,16 @@
 import
   (builtins.fetchTarball {
-    name = "nixos-unstable-2021-02-04";
+    name = "nixos-unstable-2022-08-31";
     url =
-      "https://github.com/nixos/nixpkgs/archive/7cbec40a09533dd9c525d6ab94dddfe77768101a.tar.gz";
-    sha256 = "006fns0kxs9n32cg6f4p0zyaxxsyidwsa152flpsbaky1c6drn96";
+      "https://github.com/nixos/nixpkgs/archive/a63021a330d8d33d862a8e29924b42d73037dd37.tar.gz";
+    sha256 = "sha256:1bc1vr5k5wswd15xc5zy4bpprand9qb8rkd3c50acy3nl34ld4q0";
   })
 {
   overlays = [
 
     (self: super: {
       haskellPackages = with self.haskell.lib;
-        super.haskellPackages.extend (hself: hsuper: {
-
-          hakyll = dontCheck (markUnbroken (overrideSrc hsuper.hakyll {
-            src = super.fetchFromGitHub {
-              owner = "jaspervdj";
-              repo = "hakyll";
-              rev = "f3881821328fae8cba848627f1caf2086121c903";
-              sha256 = "1nhkjr1qwml3i35q8p599s6gl2rp1ppci1px1xy934h3hl4c20hv";
-            };
-          }));
-        });
+        super.haskellPackages.extend (hself: hsuper: { });
     })
   ];
 }

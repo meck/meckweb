@@ -6,6 +6,7 @@ module Config (siteNameCtx, linksCtx) where
 import           Data.Maybe                     ( fromMaybe )
 import qualified Data.Text                     as T
 import           Data.Yaml
+import           Data.Aeson.Key                 ( fromString )
 import           Hakyll
 
 siteNameCtx :: Context String
@@ -14,8 +15,8 @@ siteNameCtx = field "siteName" $ \_ ->
         "config.yaml"
 
 linkCtx :: Context Object
-linkCtx = Context $ \k _ i ->
-    pure $ StringField $ either error id $ parseEither (.: T.pack k)
+linkCtx = Context $ \k _ i -> do
+    pure $ StringField $ either error id $ parseEither (.: fromString k)
                                                        (itemBody i)
 
 linksCtx :: Context a

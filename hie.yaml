@@ -1,7 +1,0 @@
-cradle:
-  cabal:
-    - path: "./src/Site.hs"
-      component: "meckweb:exe:site"
-    - path: "./css/default.hs"
-      component: "meckweb:exe:css"
-
