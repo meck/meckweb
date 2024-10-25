@@ -19,9 +19,10 @@ links:
 
 - [Plex](http://yig:32400)
 - [Transmission](http://yig/transmission)
+- [Prowlarr](http://yig/prowlarr)
 - [Sonarr](http://yig/sonarr)
 - [Radarr](http://yig/radarr)
-- [Jacket](http://yig/jackett)
+- [Readarr](http://yig/readarr)
 
 ### Oztalun
 
