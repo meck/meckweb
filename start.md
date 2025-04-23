@@ -1,10 +1,5 @@
 ---
 noIndex: true
-links:
-  - linkTitle: "Github"
-    linkUrl: "https://github.com"
-    linkIcon: "github"
-    linkIconSet: "fab"
 ---
 
 ### Yig
@@ -17,13 +12,10 @@ links:
 
 #### Media
 
+- [Jellyfin](http://yig:8096)
 - [Plex](http://yig:32400)
 - [Transmission](http://yig/transmission)
 - [Prowlarr](http://yig/prowlarr)
 - [Sonarr](http://yig/sonarr)
 - [Radarr](http://yig/radarr)
 - [Readarr](http://yig/readarr)
-
-### Oztalun
-
-- [Miniflux](https://feed.meck.dev/)

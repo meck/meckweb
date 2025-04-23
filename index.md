@@ -5,10 +5,10 @@ links:
     linkIcon: "envelope"
     linkIconSet: "fas"
 
-  - linkTitle: "Public PGP Key"
-    linkUrl: "/pgp.html"
-    linkIcon: "key"
-    linkIconSet: "fas"
+  - linkTitle: "mastodon"
+    linkUrl: "https://mastodon.social/@meck"
+    linkIcon: "mastodon"
+    linkIconSet: "fab"
 
   - linkTitle: "github"
     linkUrl: "https://github.com/meck"
